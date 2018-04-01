@@ -1,3 +1,4 @@
+# https://doc.rust-lang.org/cargo/reference/config.html
 
 [target.thumbv7m-none-eabi]
 runner = 'arm-none-eabi-gdb'
@@ -6,7 +7,9 @@ rustflags = [
   "-C", "linker=arm-none-eabi-ld",
   "-Z", "linker-flavor=ld",
   "-Z", "thinlto=no",
+  "-C", "link-arg=-Map=memory.map",
 ]
 
 [build]
 target = "thumbv7m-none-eabi"
+

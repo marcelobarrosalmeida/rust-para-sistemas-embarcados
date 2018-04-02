@@ -12,7 +12,7 @@ use cortex_m_semihosting::hio;
 
 #[link_section = ".vector_table.interrupts"]
 #[used]
-static INTERRUPTS: [extern "C" fn(); 240] = [default_handler; 240];
+static INTERRUPTS: [extern "C" fn(); 66] = [default_handler; 66];
 
 extern "C" fn default_handler() {
     asm::bkpt();
@@ -20,7 +20,7 @@ extern "C" fn default_handler() {
 
 fn main() {
     let mut stdout = hio::hstdout().unwrap();
-    writeln!(stdout, "Hello, world!").unwrap();
+    writeln!(stdout, "Alo mundo !").unwrap();
 }
 
 
